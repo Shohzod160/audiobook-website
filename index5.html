@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Тест по SQL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .question-block {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .question-block p {
+            font-weight: bold;
+            margin-top: 0;
+        }
+        .question-block ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .question-block li {
+            margin-bottom: 10px;
+        }
+        .question-block label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        .question-block input[type="radio"] {
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+        .correct-answer-text {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Тест по SQL</h1>
+
+    <div class="question-block">
+        <p>1. При создании многоколоночного индекса, такого как CREATE INDEX idx_multi ON my_table (colA, colB, colC), как порядок столбцов обычно влияет на оптимизацию запросов?</p>
+        <ul>
+            <li><label><input type="radio" name="q1" value="1"> Порядок столбцов не имеет значения; оптимизатор может использовать любую комбинацию столбцов.</label></li>
+            <li><label><input type="radio" name="q1" value="2"> Запросы, фильтрующие только по colC, будут наиболее эффективно оптимизированы.</label></li>
+            <li><label class="correct-answer-text"><input type="radio" name="q1" value="3"> Индекс наиболее эффективен для запросов, фильтрующих по colA, или по colA и colB, или по всем трем столбцам.</label></li>
+            <li><label><input type="radio" name="q1" value="4"> Индекс в основном ускоряет запросы, которые сортируют по последнему указанному столбцу (colC).</label></li>
+        </ul>
+    </div>
+
+    <div class="question-block">
+        <p>2. Одним из ключевых преимуществ использования представлений для обеспечения безопасности является их способность:</p>
+        <ul>
+            <li><label><input type="radio" name="q2" value="1"> Автоматически шифровать все данные, выбираемые через представление.</label></li>
+            <li><label><input type="radio" name="q2" value="2"> Предотвращать все атаки типа SQL-инъекций при запросах к представлению.</label></li>
+            <li><label class="correct-answer-text"><input type="radio" name="q2" value="3"> Ограничивать доступ пользователей к определенным столбцам или строкам из базовых таблиц.</label></li>
+            <li><label><input type="radio" name="q2" value="4"> Автоматически аудировать все операции DML, выполняемые через представление.</label></li>
+        </ul>
+    </div>
+
+    <div class="question-block">
+        <p>3. В PostgreSQL, какие из следующих ограничений базы данных обычно приводят к автоматическому созданию базового индекса для ограниченных столбцов?</p>
+        <ul>
+            <li><label><input type="radio" name="q3" value="1"> Ограничения CHECK и ограничения FOREIGN KEY.</label></li>
+            <li><label><input type="radio" name="q3" value="2"> Ограничения NOT NULL и ограничения значения DEFAULT.</label></li>
+            <li><label class="correct-answer-text"><input type="radio" name="q3" value="3"> Ограничения PRIMARY KEY и ограничения UNIQUE.</label></li>
+            <li><label><input type="radio" name="q3" value="4"> Ограничения EXCLUSION и определения TRIGGER.</label></li>
+        </ul>
+    </div>
+
+    <div class="question-block">
+        <p>4. Какая команда SQL используется для удаления таблицы из базы данных, но только если таблица существует в данный момент, тем самым предотвращая ошибку, если она уже была удалена?</p>
+        <ul>
+            <li><label><input type="radio" name="q4" value="1"> DELETE TABLE IF EXISTS table_name;</label></li>
+            <li><label><input type="radio" name="q4" value="2"> REMOVE TABLE table_name IF PRESENT;</label></li>
+            <li><label class="correct-answer-text"><input type="radio" name="q4" value="3"> DROP TABLE IF EXISTS table_name;</label></li>
+            <li><label><input type="radio" name="q4" value="4"> ERASE TABLE table_name ON EXISTENCE;</label></li>
+        </ul>
+    </div>
+
+    <div class="question-block">
+        <p>5. В SQL-запросе, использующем агрегатные функции (например, COUNT(), SUM()) с предложением GROUP BY, какое предложение используется для фильтрации сгруппированных результатов на основе результата агрегатной функции?</p>
+        <ul>
+            <li><label><input type="radio" name="q5" value="1"> WHERE</label></li>
+            <li><label><input type="radio" name="q5" value="2"> FILTER</label></li>
+            <li><label class="correct-answer-text"><input type="radio" name="q5" value="3"> HAVING</label></li>
+            <li><label><input type="radio" name="q5" value="4"> CONDITION</label></li>
+        </ul>
+    </div>
+
+    <div class="question-block">
+        <p>6. Какая агрегатная функция SQL используется для определения общего количества строк в результирующем наборе запроса, включая строки со значениями NULL в некоторых столбцах?</p>
+        <ul>
+            <li><label><input type="radio" name="q6" value="1"> SUM(*)</label></li>
+            <li><label><input type="radio" name="q6" value="2"> COUNT(column_name)</label></li>
+            <li><label><input type="radio" name="q6" value="3"> TOTAL(*)</label></li>
+            <li><label class="correct-answer-text"><input type="radio" name="q6" value="4"> COUNT(*)</label></li>
+        </ul>
+    </div>
+
+    <div class="question-block">
+        <p>7. Какой базовый синтаксис SQL является правильным для определения нового представления с именем active_users?</p>
+        <ul>
+            <li><label><input type="radio" name="q7" value="1"> NEW VIEW active_users AS SELECT user_id, username FROM users WHERE status = 'active';</label></li>
+            <li><label><input type="radio" name="q7" value="2"> CREATE VIEW active_users USING SELECT user_id, username FROM users WHERE status = 'active';</label></li>
+            <li><label><input type="radio" name="q7" value="3"> DEFINE VIEW active_users AS SELECT user_id, username FROM users WHERE status = 'active';</label></li>
+            <li><label class="correct-answer-text"><input type="radio" name="q7" value="4"> CREATE VIEW active_users AS SELECT user_id, username FROM users WHERE status = 'active';</label></li>
+        </ul>
+    </div>
+
+    <div class="question-block">
+        <p>8. Какая команда SQL используется для создания стандартного B-tree индекса по одному столбцу для потенциального ускорения запросов?</p>
+        <ul>
+            <li><label><input type="radio" name="q8" value="1"> ADD INDEX index_name ON table_name (column_name);</label></li>
+            <li><label><input type="radio" name="q8" value="2"> CREATE INDEX index_name FOR table_name (column_name);</label></li>
+            <li><label class="correct-answer-text"><input type="radio" name="q8" value="3"> CREATE INDEX index_name ON table_name (column_name);</label></li>
+            <li><label><input type="radio" name="q8" value="4"> MAKE INDEX index_name ON table_name USING (column_name);</label></li>
+        </ul>
+    </div>
+
+    <div class="question-block">
+        <p>9. Какое выражение SQL позволяет реализовывать логику if-then-else непосредственно в запросе для получения различных результатов в зависимости от условий?</p>
+        <ul>
+            <li><label><input type="radio" name="q9" value="1"> IF ... THEN ... ELSE ... ENDIF</label></li>
+            <li><label><input type="radio" name="q9" value="2"> DECODE(condition, result1, condition2, result2, ..., else_result)</label></li>
+            <li><label><input type="radio" name="q9" value="3"> SWITCH ... CASE ... DEFAULT ... END</label></li>
+            <li><label class="correct-answer-text"><input type="radio" name="q9" value="4"> CASE WHEN condition1 THEN result1 ... ELSE else_result END</label></li>
+        </ul>
+    </div>
+
+    <div class="question-block">
+        <p>10. Какая команда SQL корректно удаляет индекс из базы данных, одновременно предотвращая ошибку, если индекс не существует?</p>
+        <ul>
+            <li><label><input type="radio" name="q10" value="1"> DELETE INDEX IF EXISTS index_name;</label></li>
+            <li><label class="correct-answer-text"><input type="radio" name="q10" value="2"> DROP INDEX IF EXISTS index_name;</label></li>
+            <li><label><input type="radio" name="q10" value="3"> REMOVE INDEX index_name IF PRESENT;</label></li>
+            <li><label><input type="radio" name="q10" value="4"> ERASE INDEX IF NOT EXISTS index_name;</label></li>
+        </ul>
+    </div>
+
+    <div class="question-block">
+        <p>11. Какое утверждение правильно описывает операционную разницу между предложениями WHERE и HAVING в SQL-запросах, включающих агрегацию?</p>
+        <ul>
+            <li><label><input type="radio" name="q11" value="1"> WHERE фильтрует данные после группировки, тогда как HAVING фильтрует до группировки.</label></li>
+            <li><label class="correct-answer-text"><input type="radio" name="q11" value="2"> WHERE фильтрует отдельные строки до их группировки и агрегации, тогда как HAVING фильтрует сами группы после агрегации.</label></li>
+            <li><label><input type="radio" name="q11" value="3"> И WHERE, и HAVING применяются одновременно после агрегации.</label></li>
+            <li><label><input type="radio" name="q11" value="4"> WHERE может использовать агрегатные функции для фильтрации, тогда как HAVING не может.</label></li>
+        </ul>
+    </div>
+
+    <div class="question-block">
+        <p>12. Каково основное назначение опции OR REPLACE в операторе CREATE VIEW?</p>
+        <ul>
+            <li><label><input type="radio" name="q12" value="1"> Для переименования существующего представления, если новое имя отличается.</label></li>
+            <li><label><input type="radio" name="q12" value="2"> Для создания представления только в том случае, если оно еще не существует, в противном случае ничего не делать.</label></li>
+            <li><label class="correct-answer-text"><input type="radio" name="q12" value="3"> Для обновления определения существующего представления или его создания, если оно не существует.</label></li>
+            <li><label><input type="radio" name="q12" value="4"> Для принудительного пересоздания представления с удалением всех зависимых объектов.</label></li>
+        </ul>
+    </div>
+
+    <div class="question-block">
+        <p>13. После создания представления, как обычно извлекаются из него данные?</p>
+        <ul>
+            <li><label><input type="radio" name="q13" value="1"> С помощью команды EXECUTE VIEW view_name;.</label></li>
+            <li><label><input type="radio" name="q13" value="2"> Путем вызова специальной хранимой процедуры, связанной с представлением.</label></li>
+            <li><label class="correct-answer-text"><input type="radio" name="q13" value="3"> С помощью стандартного оператора SELECT, аналогично запросу к таблице.</label></li>
+            <li><label><input type="radio" name="q13" value="4"> С помощью команды FETCH DATA FROM VIEW view_name;.</label></li>
+        </ul>
+    </div>
+
+    <div class="question-block">
+        <p>14. Какое ограничение SQL используется для обеспечения того, чтобы значения, вводимые в определенный столбец, соответствовали заданному условию, например, чтобы значение было положительным или принадлежало к предопределенному списку вариантов?</p>
+        <ul>
+            <li><label><input type="radio" name="q14" value="1"> VALIDATE</label></li>
+            <li><label><input type="radio" name="q14" value="2"> ASSERT</label></li>
+            <li><label><input type="radio" name="q14" value="3"> ENSURE</label></li>
+            <li><label class="correct-answer-text"><input type="radio" name="q14" value="4"> CHECK</label></li>
+        </ul>
+    </div>
+
+    <div class="question-block">
+        <p>15. При определении столбца, который должен автоматически генерировать уникальные целочисленные значения для каждой новой строки и служить первичным идентификатором таблицы, какая комбинация ключевых слов SQL обычно используется в PostgreSQL?</p>
+        <ul>
+            <li><label><input type="radio" name="q15" value="1"> AUTO_NUMBER PRIMARY</label></li>
+            <li><label><input type="radio" name="q15" value="2"> IDENTITY KEY UNIQUE</label></li>
+            <li><label class="correct-answer-text"><input type="radio" name="q15" value="3"> SERIAL PRIMARY KEY</label></li>
+            <li><label><input type="radio" name="q15" value="4"> INCREMENTAL ID NOT NULL</label></li>
+        </ul>
+    </div>
+
+    <div class="question-block">
+        <p>16. При последовательном соединении трех таблиц (например, TableA, TableB, TableC), где TableA соединяется с TableB, а затем результат этого соединения соединяется с TableC, как обычно структурируются условия ON?</p>
+        <ul>
+            <li><label><input type="radio" name="q16" value="1"> FROM TableA JOIN TableB ON TableA.key = TableC.key JOIN TableC ON TableB.key = TableC.key</label></li>
+            <li><label><input type="radio" name="q16" value="2"> FROM TableA JOIN TableB JOIN TableC ON TableA.key = TableB.key AND TableB.key = TableC.key</label></li>
+            <li><label class="correct-answer-text"><input type="radio" name="q16" value="3"> FROM TableA JOIN TableB ON TableA.join_col_AB = TableB.join_col_AB JOIN TableC ON TableB.join_col_BC = TableC.join_col_BC</label></li>
+            <li><label><input type="radio" name="q16" value="4"> FROM TableA, TableB, TableC WHERE TableA.key = TableB.key AND TableA.key = TableC.key</label></li>
+        </ul>
+    </div>
+
+    <div class="question-block">
+        <p>17. Как агрегатная функция AVG() обрабатывает значения NULL в числовом столбце при вычислении среднего значения?</p>
+        <ul>
+            <li><label><input type="radio" name="q17" value="1"> Она рассматривает значения NULL как ноль, включая их в подсчет и сумму.</label></li>
+            <li><label class="correct-answer-text"><input type="radio" name="q17" value="2"> Она полностью игнорирует значения NULL, поэтому они не влияют на подсчет или сумму, используемые для среднего значения.</label></li>
+            <li><label><input type="radio" name="q17" value="3"> Она вызывает ошибку запроса, если присутствуют какие-либо значения NULL.</label></li>
+            <li><label><input type="radio" name="q17" value="4"> Она возвращает NULL для среднего значения, если в столбце встречается какое-либо значение NULL.</label></li>
+        </ul>
+    </div>
+
+    <div class="question-block">
+        <p>18. Для создания представления, которое отображает данные, объединенные из двух или более связанных таблиц, какое предложение SQL обычно является обязательным в определяющем SELECT запросе представления?</p>
+        <ul>
+            <li><label><input type="radio" name="q18" value="1"> UNION ALL</label></li>
+            <li><label><input type="radio" name="q18" value="2"> INTERSECT</label></li>
+            <li><label class="correct-answer-text"><input type="radio" name="q18" value="3"> JOIN</label></li>
+            <li><label><input type="radio" name="q18" value="4"> MERGE</label></li>
+        </ul>
+    </div>
+
+    <div class="question-block">
+        <p>19. Что наилучшим образом описывает ПРЕДСТАВЛЕНИЕ SQL с точки зрения хранения данных?</p>
+        <ul>
+            <li><label><input type="radio" name="q19" value="1"> Оно физически хранит копию данных из базовых таблиц.</label></li>
+            <li><label class="correct-answer-text"><input type="radio" name="q19" value="2"> Это виртуальная таблица, содержимое которой определяется хранимым запросом.</label></li>
+            <li><label><input type="radio" name="q19" value="3"> Оно временно хранит данные только во время выполнения запроса к нему.</label></li>
+            <li><label><input type="radio" name="q19" value="4"> Оно кэширует часто используемые данные для более быстрого извлечения.</label></li>
+        </ul>
+    </div>
+
+    <div class="question-block">
+        <p>20. Основное определение представления SQL, которое определяет его столбцы и строки, задается с помощью:</p>
+        <ul>
+            <li><label><input type="radio" name="q20" value="1"> Оператора CREATE TABLE AS.</label></li>
+            <li><label class="correct-answer-text"><input type="radio" name="q20" value="2"> Оператора SELECT.</label></li>
+            <li><label><input type="radio" name="q20" value="3"> Серии операторов INSERT.</label></li>
+            <li><label><input type="radio" name="q20" value="4"> Оператора ALTER TABLE.</label></li>
+        </ul>
+    </div>
+
+    <div class="question-block">
+        <p>21. При составлении SQL-запроса, который соединяет таблицу саму с собой (self-join), какое требование является обязательным для различения разных ссылок на одну и ту же таблицу?</p>
+        <ul>
+            <li><label><input type="radio" name="q21" value="1"> Явное использование ключевого слова SELF JOIN.</label></li>
+            <li><label><input type="radio" name="q21" value="2"> Убедиться, что таблица имеет составной первичный ключ.</label></li>
+            <li><label class="correct-answer-text"><input type="radio" name="q21" value="3"> Использование различных псевдонимов таблицы для каждой ссылки на таблицу.</label></li>
+            <li><label><input type="radio" name="q21" value="4"> Фильтрация результатов с помощью предложения WHERE, сравнивающего идентичные столбцы из обеих ссылок.</label></li>
+        </ul>
+    </div>
+
+    <div class="question-block">
+        <p>22. Согласно учебному пособию, какой тип индекса по умолчанию используется PostgreSQL при создании индекса без указания предложения USING method?</p>
+        <ul>
+            <li><label><input type="radio" name="q22" value="1"> Хеш-индекс (Hash)</label></li>
+            <li><label><input type="radio" name="q22" value="2"> GiST</label></li>
+            <li><label class="correct-answer-text"><input type="radio" name="q22" value="3"> B-дерево (B-tree)</label></li>
+            <li><label><input type="radio" name="q22" value="4"> GIN</label></li>
+        </ul>
+    </div>
+
+    <div class="question-block">
+        <p>23. Какая команда SQL используется для перестроения всех существующих индексов для конкретной таблицы, часто для устранения фрагментации?</p>
+        <ul>
+            <li><label><input type="radio" name="q23" value="1"> OPTIMIZE INDEXES FOR table_name;</label></li>
+            <li><label><input type="radio" name="q23" value="2"> REBUILD ALL INDEXES ON table_name;</label></li>
+            <li><label class="correct-answer-text"><input type="radio" name="q23" value="3"> REINDEX TABLE table_name;</label></li>
+            <li><label><input type="radio" name="q23" value="4"> DEFRAGMENT INDEXES table_name;</label></li>
+        </ul>
+    </div>
+
+    <div class="question-block">
+        <p>24. Каково основное назначение UNIQUE INDEX помимо потенциального ускорения извлечения данных?</p>
+        <ul>
+            <li><label><input type="radio" name="q24" value="1"> Он разрешает только не-NULL значения в индексируемом столбце.</label></li>
+            <li><label class="correct-answer-text"><input type="radio" name="q24" value="2"> Он обеспечивает, чтобы все значения в индексируемом столбце (столбцах) были уникальными в пределах таблицы.</label></li>
+            <li><label><input type="radio" name="q24" value="3"> Он автоматически физически сортирует данные таблицы на основе индексируемого столбца.</label></li>
+            <li><label><input type="radio" name="q24" value="4"> Это единственный тип индекса, который может использоваться для первичных ключей.</label></li>
+        </ul>
+    </div>
+
+    <div class="question-block">
+        <p>25. Агрегатные функции MIN() и MAX() могут работать с какими из следующих общих категорий типов данных?</p>
+        <ul>
+            <li><label><input type="radio" name="q25" value="1"> Только числовые типы данных.</label></li>
+            <li><label><input type="radio" name="q25" value="2"> Только числовые и строковые типы данных.</label></li>
+            <li><label class="correct-answer-text"><input type="radio" name="q25" value="3"> Числовые, строковые и типы данных даты/времени.</label></li>
+            <li><label><input type="radio" name="q25" value="4"> Любой тип данных без ограничений.</label></li>
+        </ul>
+    </div>
+
+    <div class="question-block">
+        <p>26. Какая строковая функция SQL предназначена для замены всех вхождений указанной подстроки в данной строке другой подстрокой?</p>
+        <ul>
+            <li><label><input type="radio" name="q26" value="1"> SUBSTRING(string FROM start FOR length)</label></li>
+            <li><label><input type="radio" name="q26" value="2"> ALTER(string, from_substring, to_substring)</label></li>
+            <li><label class="correct-answer-text"><input type="radio" name="q26" value="3"> REPLACE(string, from_substring, to_substring)</label></li>
+            <li><label><input type="radio" name="q26" value="4"> MODIFY(string, from_substring, to_substring)</label></li>
+        </ul>
+    </div>
+
+    <div class="question-block">
+        <p>27. Какое представление системного каталога в PostgreSQL можно запросить, чтобы получить список существующих индексов вместе с их определениями для конкретной таблицы?</p>
+        <ul>
+            <li><label><input type="radio" name="q27" value="1"> pg_catalog.pg_tables</label></li>
+            <li><label><input type="radio" name="q27" value="2"> pg_catalog.pg_views</label></li>
+            <li><label class="correct-answer-text"><input type="radio" name="q27" value="3"> pg_catalog.pg_indexes</label></li>
+            <li><label><input type="radio" name="q27" value="4"> pg_catalog.pg_constraints</label></li>
+        </ul>
+    </div>
+
+    <div class="question-block">
+        <p>28. Если предпринимается попытка удалить представление с помощью DROP VIEW view_name; (без CASCADE), и от этого представления зависят другие объекты базы данных, каково поведение по умолчанию?</p>
+        <ul>
+            <li><label><input type="radio" name="q28" value="1"> Представление удаляется, и все зависимые объекты также автоматически удаляются.</label></li>
+            <li><label><input type="radio" name="q28" value="2"> Представление удаляется, но зависимые объекты могут стать недействительными.</label></li>
+            <li><label class="correct-answer-text"><input type="radio" name="q28" value="3"> Оператор DROP VIEW завершится ошибкой, и представление не будет удалено.</label></li>
+            <li><label><input type="radio" name="q28" value="4"> Система базы данных запросит у пользователя подтверждение на удаление зависимых объектов.</label></li>
+        </ul>
+    </div>
+
+    <div class="question-block">
+        <p>29. Каково основное преимущество использования псевдонимов таблиц (например, ... FROM main_table AS mt) в SQL-запросах, особенно при соединении нескольких таблиц?</p>
+        <ul>
+            <li><label><input type="radio" name="q29" value="1"> Значительно увеличить скорость выполнения запроса.</label></li>
+            <li><label class="correct-answer-text"><input type="radio" name="q29" value="2"> Улучшить читаемость запроса и избежать неоднозначности, если столбцы из разных таблиц имеют одинаковые имена.</label></li>
+            <li><label><input type="radio" name="q29" value="3"> Автоматически создавать временные индексы для столбцов, используемых в условиях соединения.</label></li>
+        </ul>
+    </div>
+
+    <div class="question-block">
+        <p>30. Каков результат функции FLOOR(number) при применении к положительному десятичному числу, такому как 9.87?</p>
+        <ul>
+            <li><label><input type="radio" name="q30" value="1"> 10</label></li>
+            <li><label><input type="radio" name="q30" value="2"> 9.9</label></li>
+            <li><label class="correct-answer-text"><input type="radio" name="q30" value="3"> 9</label></li>
+            <li><label><input type="radio" name="q30" value="4"> 9.8</label></li>
+        </ul>
+    </div>
+
+    <div class="question-block">
+        <p>31. Какую числовую функцию вы бы использовали, чтобы округлить число типа 789.123 до ближайшей сотни, получив 800?</p>
+        <ul>
+            <li><label><input type="radio" name="q31" value="1"> ROUND(789.123, 2)</label></li>
+            <li><label class="correct-answer-text"><input type="radio" name="q31" value="2"> ROUND(789.123, -2)</label></li>
+            <li><label><input type="radio" name="q31" value="3"> CEIL(789.123, -2)</label></li>
+            <li><label><input type="radio" name="q31" value="4"> FLOOR(789.123 TO 100)</label></li>
+        </ul>
+    </div>
+
+    <div class="question-block">
+        <p>32. Каково основное предназначение оператора || в SQL, особенно рекомендуемого в PostgreSQL для работы со строками?</p>
+        <ul>
+            <li><label><input type="radio" name="q32" value="1"> Для выполнения логической операции ИЛИ в предложении WHERE.</label></li>
+            <li><label class="correct-answer-text"><input type="radio" name="q32" value="2"> Для конкатенации (объединения) двух или более строк.</label></li>
+            <li><label><input type="radio" name="q32" value="3"> Для вычисления побитового ИЛИ двух целочисленных значений.</label></li>
+            <li><label><input type="radio" name="q32" value="4"> Для указания альтернативных значений в функции COALESCE.</label></li>
+        </ul>
+    </div>
+
+    <div class="question-block">
+        <p>33. При использовании функции EXTRACT() для получения определенной части из значения даты или временной метки, какое ключевое слово field используется для извлечения дня недели (где воскресенье обычно равно 0)?</p>
+        <ul>
+            <li><label><input type="radio" name="q33" value="1"> WEEKDAY</label></li>
+            <li><label><input type="radio" name="q33" value="2"> DAY_OF_WEEK</label></li>
+            <li><label class="correct-answer-text"><input type="radio" name="q33" value="3"> DOW</label></li>
+            <li><label><input type="radio" name="q33" value="4"> DAYNUM</label></li>
+        </ul>
+    </div>
+
+    <div class="question-block">
+        <p>34. При определении представления, которое включает агрегатные функции (например, COUNT(), AVG()) в своем списке SELECT, какое предложение SQL обычно требуется в определяющем запросе представления?</p>
+        <ul>
+            <li><label><input type="radio" name="q34" value="1"> HAVING</label></li>
+            <li><label><input type="radio" name="q34" value="2"> ORDER BY</label></li>
+            <li><label><input type="radio" name="q34" value="3"> WHERE</label></li>
+            <li><label class="correct-answer-text"><input type="radio" name="q34" value="4"> GROUP BY</label></li>
+        </ul>
+    </div>
+
+    <div class="question-block">
+        <p>35. Если в SQL-запросе используется ключевое слово JOIN между двумя таблицами без указания INNER, LEFT, RIGHT или FULL OUTER, какой тип соединения обычно предполагается по умолчанию?</p>
+        <ul>
+            <li><label><input type="radio" name="q35" value="1"> LEFT JOIN</label></li>
+            <li><label><input type="radio" name="q35" value="2"> FULL OUTER JOIN</label></li>
+            <li><label class="correct-answer-text"><input type="radio" name="q35" value="3"> INNER JOIN</label></li>
+            <li><label><input type="radio" name="q35" value="4"> CROSS JOIN</label></li>
+        </ul>
+    </div>
+
+    <div class="question-block">
+        <p>36. Что возвращает выражение NULLIF(value1, value2), если value1 НЕ равно value2?</p>
+        <ul>
+            <li><label><input type="radio" name="q36" value="1"> NULL</label></li>
+            <li><label class="correct-answer-text"><input type="radio" name="q36" value="2"> value1</label></li>
+            <li><label><input type="radio" name="q36" value="3"> value2</label></li>
+            <li><label><input type="radio" name="q36" value="4"> Ошибку, так как функция ожидает, что value1 и value2 будут равны.</label></li>
+        </ul>
+    </div>
+
+    <div class="question-block">
+        <p>37. Если функция TRIM() используется без указания LEADING, TRAILING или BOTH и без указания символов для удаления, каково ее поведение по умолчаниюexecution_type для строки?</p>
+        <ul>
+            <li><label><input type="radio" name="q37" value="1"> Она удаляет только начальные пробельные символы.</label></li>
+            <li><label><input type="radio" name="q37" value="2"> Она удаляет только конечные пробельные символы.</label></li>
+            <li><label class="correct-answer-text"><input type="radio" name="q37" value="3"> Она удаляет как начальные, так и конечные пробельные символы.</label></li>
+            <li><label><input type="radio" name="q37" value="4"> Она удаляет все вхождения пробельных символов по всей строке.</label></li>
+        </ul>
+    </div>
+
+    <div class="question-block">
+        <p>38. Чтобы найти количество уникальных, не-NULL записей в определенном столбце, какое выражение SQL следует использовать?</p>
+        <ul>
+            <li><label><input type="radio" name="q38" value="1"> UNIQUE COUNT(column_name)</label></li>
+            <li><label class="correct-answer-text"><input type="radio" name="q38" value="2"> COUNT(DISTINCT column_name)</label></li>
+            <li><label><input type="radio" name="q38" value="3"> DISTINCT(COUNT(column_name))</label></li>
+            <li><label><input type="radio" name="q38" value="4"> COUNT(column_name UNIQUE)</label></li>
+        </ul>
+    </div>
+
+    <div class="question-block">
+        <p>39. Какая команда SQL используется для окончательного удаления представления из схемы базы данных?</p>
+        <ul>
+            <li><label><input type="radio" name="q39" value="1"> DELETE VIEW view_name;</label></li>
+            <li><label><input type="radio" name="q39" value="2"> REMOVE VIEW view_name;</label></li>
+            <li><label class="correct-answer-text"><input type="radio" name="q39" value="3"> DROP VIEW view_name;</label></li>
+            <li><label><input type="radio" name="q39" value="4"> ERASE VIEW view_name;</label></li>
+        </ul>
+    </div>
+
+    <div class="question-block">
+        <p>40. Какова основная функциональность выражения COALESCE() в SQL?</p>
+        <ul>
+            <li><label><input type="radio" name="q40" value="1"> Для преобразования значения из одного типа данных в другой, гарантируя отсутствие null-значений.</label></li>
+            <li><label class="correct-answer-text"><input type="radio" name="q40" value="2"> Для возврата первого не-NULL выражения из списка аргументов.</label></li>
+            <li><label><input type="radio" name="q40" value="3"> Для объединения (конкатенации) нескольких строковых аргументов в один.</label></li>
+            <li><label><input type="radio" name="q40" value="4"> Для оценки условия и возврата NULL, если условие выполняется, в противном случае — возврата исходного значения.</label></li>
+        </ul>
+    </div>
+
+    <div class="question-block">
+        <p>41. Что из перечисленного представляет собой сокращенный синтаксис PostgreSQL для приведения типов, эквивалентный стандартному SQL CAST(expression AS type)?</p>
+        <ul>
+            <li><label><input type="radio" name="q41" value="1"> CONVERT(type, expression)</label></li>
+            <li><label class="correct-answer-text"><input type="radio" name="q41" value="2"> expression::type</label></li>
+            <li><label><input type="radio" name="q41" value="3"> TYPE(expression, type)</label></li>
+            <li><label><input type="radio" name="q41" value="4"> TO_TYPE(expression, type)</label></li>
+        </ul>
+    </div>
+
+    <div class="question-block">
+        <p>42. Какая структура SQL-запроса подходит для выбора категорий и их общего количества, но включая только те категории, где общее количество больше 10?</p>
+        <ul>
+            <li><label><input type="radio" name="q42" value="1"> SELECT category, COUNT() FROM products WHERE COUNT() > 10 GROUP BY category;</label></li>
+            <li><label class="correct-answer-text"><input type="radio" name="q42" value="2"> SELECT category, COUNT(*) FROM products GROUP BY category HAVING COUNT(*) > 10;</label></li>
+            <li><label><input type="radio" name="q42" value="3"> SELECT category, COUNT() FROM products GROUP BY category, COUNT() WHERE COUNT(*) > 10;</label></li>
+            <li><label><input type="radio" name="q42" value="4"> SELECT category, COUNT() FROM products GROUP BY category ORDER BY COUNT() > 10;</label></li>
+        </ul>
+    </div>
+
+    <div class="question-block">
+        <p>43. При выполнении агрегатной суммы (например, SUM(column_name)) по данным, которые могут включать группы без совпадающих записей (часто из-за LEFT JOIN), какая функция SQL может быть использована для замены потенциальных NULL результатов суммы нулем или другим значением по умолчанию?</p>
+        <ul>
+            <li><label><input type="radio" name="q43" value="1"> IFNULL(SUM(column_name), 0)</label></li>
+            <li><label><input type="radio" name="q43" value="2"> NULL_TO_ZERO(SUM(column_name))</label></li>
+            <li><label><input type="radio" name="q43" value="3"> REPLACE_NULL(SUM(column_name), 0)</label></li>
+            <li><label class="correct-answer-text"><input type="radio" name="q43" value="4"> COALESCE(SUM(column_name), 0)</label></li>
+        </ul>
+    </div>
+
+    <div class="question-block">
+        <p>44. Какое из следующих предложений SQL специально предназначено для фильтрации групп, созданных предложением GROUP BY, на основе результатов агрегатных функций?</p>
+        <ul>
+            <li><label><input type="radio" name="q44" value="1"> WHERE</label></li>
+            <li><label><input type="radio" name="q44" value="2"> FILTER</label></li>
+            <li><label class="correct-answer-text"><input type="radio" name="q44" value="3"> HAVING</label></li>
+            <li><label><input type="radio" name="q44" value="4"> GROUP FILTER</label></li>
+        </ul>
+    </div>
+
+    <div class="question-block">
+        <p>45. Какой тип индекса специально разработан для включения записей только для подмножества строк таблицы, удовлетворяющих условию, определенному в предложении WHERE?</p>
+        <ul>
+            <li><label><input type="radio" name="q45" value="1"> Условный индекс</label></li>
+            <li><label class="correct-answer-text"><input type="radio" name="q45" value="2"> Частичный индекс</label></li>
+            <li><label><input type="radio" name="q45" value="3"> Фильтрованный индекс</label></li>
+            <li><label><input type="radio" name="q45" value="4"> Селективный индекс</label></li>
+        </ul>
+    </div>
+
+    <div class="question-block">
+        <p>46. Какой тип SQL-соединения наиболее подходит, когда необходимо извлечь все записи из первой таблицы и совпадающие записи из второй таблицы, отображая NULL для столбцов второй таблицы, если совпадение не найдено?</p>
+        <ul>
+            <li><label class="correct-answer-text"><input type="radio" name="q46" value="1"> LEFT JOIN</label></li>
+            <li><label><input type="radio" name="q46" value="2"> RIGHT JOIN</label></li>
+            <li><label><input type="radio" name="q46" value="3"> INNER JOIN</label></li>
+            <li><label><input type="radio" name="q46" value="4"> FULL OUTER JOIN</label></li>
+        </ul>
+    </div>
+
+</body>
+</html>
